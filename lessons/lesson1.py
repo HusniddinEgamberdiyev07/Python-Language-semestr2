@@ -45,3 +45,13 @@ def add(num1, num2):
     return  num1+num2
 
 print(add(1, 2))
+
+def multiplyBy5(x):
+    return 5*x
+
+print(multiplyBy5(2))
+
+def dunno():
+    pass
+
+dunno()
