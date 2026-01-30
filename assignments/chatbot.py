@@ -68,15 +68,15 @@ def show_bag():
     print(my_bag)
 
 def buy_all():
-    # total = 0
-    # print(my_bag)
-    # for item in my_bag:
-    #     total += item["cost"]
-    # if total < my_money:
-    #     my_money=my_money-total
-    #     my_bag.clear()
-    # else:
-    #     print("You don't have enough money")
+    global my_money
+    total = 0
+    for item in my_bag:
+        total += item["cost"]
+    if total < my_money:
+        my_money-=total
+        my_bag.clear()
+    else:
+        print("You don't have enough money")
 
     print("bought")
 
