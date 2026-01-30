@@ -1,51 +1,4 @@
-def say_hi():
-    print("Hello I am your chat bot assistant")
-
-def show_info():
-    print("info")
-
-def show_products():
-    print("Products: \n")
-    for product in shop_products:
-        print("name: ", product["name"])
-        print("category: ", product["category"])
-        print("cost: ", product["cost"])
-    print("\n")
-
-
-
-def show_single_product():
-    product_inp = input("Which one? ")
-    for product in shop_products:
-        if product["name"] == product_inp:
-            print("\nname: ", product["name"])
-            print("category: ", product["category"])
-            print("cost: ", product["cost"], "\n")
-
-            ask = input("Do you wnat to put it in bag: ")
-            if ask == "Yes":
-                add_to_bag(product)
-
-def add_to_bag(item):
-    my_bag.append(item)
-    print(my_bag)
-
-def show_bag():
-    print(my_bag)
-
-def buy_all():
-    print("bought")
-
-def run_program():
-    running = True
-    print("Shop chatbot")
-    while running:
-        question = input("What do you want to do: ")
-        if question in chatbot_data:
-            chatbot_data[question]()
-        elif question == "exit":
-            running = False
-
+my_money = 50
 my_bag = []
 
 shop_products = [
@@ -76,6 +29,58 @@ shop_products = [
     },
 ]
 
+def say_hi():
+    print("Hello I am your chat bot assistant")
+
+def show_info():
+    print("\nI am here to make your shopping easier")
+    print("I can show all products, show single product, put it in your bag and buy them for you.")
+    print("\nCommands: \n")
+    for key in chatbot_data.keys():
+        print(key, "\n")
+    print("exit\n")
+
+def show_products():
+    print("Products: \n")
+    for product in shop_products:
+        print("name: ", product["name"])
+        print("category: ", product["category"])
+        print("cost: ", product["cost"], "\n")
+    print("\n")
+
+def show_single_product():
+    product_inp = input("Which one? ")
+    for product in shop_products:
+        if product["name"] == product_inp:
+            print("\nname: ", product["name"])
+            print("category: ", product["category"])
+            print("cost: ", product["cost"], "\n")
+
+            ask = input("Do you wnat to put it in bag: ")
+            if ask == "Yes":
+                add_to_bag(product)
+
+def add_to_bag(item):
+    my_bag.append(item)
+    print(my_bag)
+
+def show_bag():
+    print(my_bag)
+
+def buy_all():
+    # total = 0
+    # print(my_bag)
+    # for item in my_bag:
+    #     total += item["cost"]
+    # if total < my_money:
+    #     my_money=my_money-total
+    #     my_bag.clear()
+    # else:
+    #     print("You don't have enough money")
+
+    print("bought")
+
+
 chatbot_data = {
     "hello":say_hi,
     "What can you do":show_info,
@@ -84,5 +89,15 @@ chatbot_data = {
     "Show my bag":show_bag,
     "Buy all of them":buy_all,
 }
+
+def run_program():
+    running = True
+    print("Shop chatbot")
+    while running:
+        question = input("What do you want to do: ")
+        if question in chatbot_data:
+            chatbot_data[question]()
+        elif question == "exit":
+            running = False
 
 run_program()
