@@ -39,6 +39,7 @@ def calc_grades(function):
         mark = "F"
 
         for grade in grades:
+            passed = "passed"
             if(grade["grade"] > 90):
                 mark = "A"
             elif(grade["grade"] > 80):
