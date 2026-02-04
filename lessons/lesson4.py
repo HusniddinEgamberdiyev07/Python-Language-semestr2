@@ -61,6 +61,10 @@ print(son2.house)
 # Use it to assign values to object properties
 # __init__ function always has self parameter
 
+# self can access the variables that belongs to the class
+# in init it stores the value in that object
+# self is always the first paarm in init
+
 class Person():
     def __init__(self, name, age):
         self.name  = name
@@ -80,3 +84,9 @@ person2.talk()
 # obj inside list
 list = [Person("Someone", 0)]
 list[0].talk()
+
+class P:
+    def __init__(me, name):
+        me.name = name
+
+husniddin1 = P("Husniddin")
