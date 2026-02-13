@@ -2,7 +2,7 @@
 
 # If child has the same method name child will override that method
 
-class Person():
+class Person:
     def __init__(self, name, lname):
         self.name = name
         self.lastname = lname
