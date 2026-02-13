@@ -19,3 +19,17 @@ print(m.add(1, 2))
 
 for key in m.people.keys():
     print(key, m.people[key])
+
+# modules are two types built in modules and user defined modules
+
+import platform as p
+os = p.system()
+
+print(os)
+
+print(p.architecture())
+print(p.machine())
+print(p.processor())
+print(p.node())
+
+print(dir(p.system()))
