@@ -71,22 +71,6 @@ else:
 
 txt2 = "The rain in Spain and gain in spain"
 
-# findall returns a list
-
-xs = re.findall("ai", txt2)
-print(xs)
-
-# split returns list
-
-xsplit = re.split(" ", txt2)
-print(xsplit)
-
-# sub replace and retunrs string
-
-xsub = re.sub(" ", " this is sparta ", txt2)
-print(xsub)
-
-
 txt3 =  "HEllo WORLd hello!"
 
 x2 = re.search("el", txt3, re.IGNORECASE)
@@ -95,5 +79,88 @@ x3 = re.search("el", txt3)
 print(x2.start())
 print(x3.start())
 
-txt4 = "  a king,  a God,  a ..."
-print(re.sub("  ", "I am not ", txt4))
+# findall returns a list
+
+xs = re.findall("ai", txt2)
+print(xs)
+
+# split returns list
+
+xsplit = re.split("\s", txt2) # \ is escape sequance. \s i space
+
+[print(i) for i in xsplit ]
+
+print("\n\n")
+# sub replace and retunrs string
+
+xsub = re.sub(" ", " this is sparta ", txt2)
+print(xsub)
+
+print("\n")
+
+txt4 = "  a king,  a God, I am a ... human"
+print(re.sub("\s\s", " I am not ", txt4).strip())
+
+print("\n\n")
+
+# -- Meta characters -- 
+
+# [] -> they are container. Set of characters
+
+something = re.sub("\s\s", " I am not ", txt4).strip()
+print(re.findall("[a-z]", something))   # Lowercase letters
+print(re.findall("[A-Z]", something))   # Uppercase letters
+
+# \ -> signals or sequance
+
+# \d -> digits
+
+salary = "you made 89 dollars in 2 months"
+print(re.findall("\d", salary))
+
+# 5 length string start with he and ends with o
+# hello
+# heddo
+# hebbo
+
+# . any charcater is dot except new line
+
+print("\n\n")
+
+# hello = "Uzbekistanhellofromme"
+
+hello = "The rain in Spaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaain"
+# print(re.findall("he..o", hello))
+
+# ^ -> starts with
+
+if re.findall("^The", hello): print("starts with")
+else: print("does not starts with")
+
+# $ -> ends with
+
+if re.findall("Spa*in$", hello): print("ends with")
+else: print("does not ends with")
+
+
+# * zero or more occurance
+
+if re.findall("^The.*Spa*in$", hello): print("Does")
+else: print("Does not")
+
+star = "sn"
+print(re.findall("s.*n", star))
+
+# + one or more occurance
+print(re.findall("s.+n", star))
+
+# ? zero or one occurance
+
+# text1 = "hello"
+text1 = "helo"
+print(re.findall("he.?o", text1))
+
+# {} -> exactly specified occurance
+
+text2 = "helllo"
+print(re.findall("hel{3}o", text2))
