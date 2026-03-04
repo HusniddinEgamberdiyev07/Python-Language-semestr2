@@ -164,3 +164,57 @@ print(re.findall("he.?o", text1))
 
 text2 = "helllo"
 print(re.findall("hel{3}o", text2))
+
+text3 = "hello muhahhahahaha world"
+print(re.findall("he.{2}o", text3))
+
+# | -> either
+
+print(re.findall("hello|world", text3))
+print(re.findall("world|something", text3))
+
+# \A -> starts with
+txt4 = "The rain% in spain falls$ on plain9@"
+print(re.findall("\AThe", txt4))
+
+# \B -> start with or end with
+print("\n\n")
+print(re.findall(r"\bThe", txt4))
+print(re.findall(r"\bplain", txt4))
+print(re.findall(r"The\b", txt4))
+print(re.findall(r"plain\b", txt4))
+
+# \s -> space
+
+print(re.findall("\s", txt4))
+
+# \S -> no space characters
+
+print(re.findall("\S", txt4))
+
+# \w -> word characters [A-Z] [0-9]
+
+print(re.findall("\w", txt4))
+
+# \W -> no word characters
+
+print(re.findall("\W", txt4))
+
+# \Z -> ends with
+
+print(re.findall("plain9@\Z", txt4))
+
+# [] -> set, if one of them is there it will return
+
+print(re.findall("[ai]", txt4))
+print(re.findall("[a-n]", txt4)) # a to n
+
+# [^ai] -> returns all character except a, i 
+
+print(re.findall("[^ai]", txt4))
+print(re.findall("[^a-z]", txt4))
+print(re.findall("[^0-9]", txt4))
+print(re.findall("[^a-zA-Z0-9\s]", txt4))
+print(re.findall("[a-zA-Z]", txt4))
+print(re.findall("[$@]", txt4))
+print(re.findall("[+]", txt4))
