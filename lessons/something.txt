@@ -1,0 +1,3 @@
+name: Husniddin
+age: 18
+email: husniddin200708@gmail.com

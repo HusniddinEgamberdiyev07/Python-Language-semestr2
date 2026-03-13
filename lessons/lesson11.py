@@ -114,8 +114,3 @@ def calc_simple_interest():
         print(interest)
 
 # calc_simple_interest()
-
-name="husniddin"
-text = "{} hello"
-text = text.format(name)
-print(text)
