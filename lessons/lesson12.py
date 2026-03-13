@@ -47,12 +47,12 @@ except FileNotFoundError:
 # with open("./lessons/users.txt", "r") as f:
 #     print(f.read())
 
-P = input("Enter p")
-I = input("Enter i")
-R = input("Enter r")
+# P = input("Enter p")
+# I = input("Enter i")
+# R = input("Enter r")
 
-with open("./lessons/variables.txt", "a") as f:
-    f.write(f"p:{P}i:{I}r:{R}")
+# with open("./lessons/variables.txt", "a") as f:
+#     f.write(f"p:{P}i:{I}r:{R}")
 
 print("\n\n")
 
@@ -96,3 +96,71 @@ if len(list1)>0:
             # print(i)
             # print(r)
             print(sc)
+
+
+# name = input("Enter your name: ")
+
+# with open(f"./lessons/users/{name}.txt", "w") as userFile:
+#     userFile.write(f"name:{name},")
+
+# with open(f"./lessons/users.txt", "w") as userFile:
+#     userFile.write(f"name:{name},")
+
+# def save_user_profile():
+#     name = input("Enter your name: ")
+#     age = int(input("Enter your age: "))
+#     email = input("Enter your email: ")
+
+#     with open(f"./lessons/users_profile.txt", "a") as f:
+#         f.write("=== User profile ===\n")
+#         f.write(f"Name:{name}\n")
+#         f.write(f"Age:{age}\n")
+#         f.write(f"Email:{email}\n")
+
+#         print("Saved")
+
+# to write some info on file we use write method
+# to read use read
+
+print("\n\n")
+
+# name = input("Name: ")
+
+# with open("./lessons/names.txt", "a") as f:
+#     f.write(f"{name}\n")
+
+# with open("./lessons/names.txt", "r") as f:
+#     names = f.readlines()
+    
+# print("Names: ")
+# for name in names:
+#     print(name.strip())
+
+
+
+# with open("./lessons/names.txt", "r") as f:
+#     names = f.read()
+    
+# print(names)
+# print("Names: ")
+# for name in names:
+#     print(name.strip())
+
+import os
+
+with open("./lessons/names.txt", "r") as f:
+    # print(f.readline())
+    # print(f.readline())
+    # print(f.readline())
+
+    for line in f:
+        print(line.strip())
+    if f.readline() == "":
+        print("The end")
+
+try:
+    open("./lessons/names.txt", "x")
+except FileExistsError:
+    print("It is already there")
+
+# os.remove("./lessons/names2.txt") # delete this file

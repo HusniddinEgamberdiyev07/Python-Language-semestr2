@@ -1,0 +1,32 @@
+=== User profile ===
+Name:Husniddin
+Age:18
+Email:husniddin@gmail.com
+=== User profile ===
+Name:Someone
+Age:99
+Email:someone@gmail.com
+=== User profile ===
+Name:husniddin
+Age:19
+Email:something
+=== User profile ===
+Name:Hehe
+Age:90
+Email:fajkbfe
+=== User profile ===
+Name:Somthing10
+Age:90
+Email:huhu
+=== User profile ===
+Name:hkqdhjew
+Age:190
+Email:fehkuhw
+=== User profile ===
+Name:who
+Age:10
+Email:email2
+=== User profile ===
+Name:jhfjekw
+Age:90
+Email:hfisk
