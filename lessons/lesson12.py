@@ -164,3 +164,6 @@ except FileExistsError:
     print("It is already there")
 
 # os.remove("./lessons/names2.txt") # delete this file
+# os.remove("./lessons/hello/something.txt")
+# os.rmdir("./lessons/hello")
+# os.mkdir("./lessons/hello")
