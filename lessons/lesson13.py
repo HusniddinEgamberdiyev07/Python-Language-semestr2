@@ -13,7 +13,7 @@ print(arr[0])
 print(arr[2:])
 arr[0] = 100
 print(arr)
-
+z
 arr2 = arr[2:]
 print(arr2)
 arr2[0] = 1000

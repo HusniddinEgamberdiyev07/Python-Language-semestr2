@@ -147,6 +147,7 @@ print("\n\n")
 #     print(name.strip())
 
 import os
+import shutil
 
 with open("./lessons/names.txt", "r") as f:
     # print(f.readline())
@@ -167,3 +168,4 @@ except FileExistsError:
 # os.remove("./lessons/hello/something.txt")
 # os.rmdir("./lessons/hello")
 # os.mkdir("./lessons/hello")
+# shutil.rmtree("./lessons/hello")
