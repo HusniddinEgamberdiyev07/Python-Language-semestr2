@@ -70,26 +70,3 @@ print(np.array(matrix))
 
 # for i, j in a:
 #     print(i, j)
-
-# random numbers in python
-
-from numpy import random
-
-num = random.randint(-100, 0, 5)
-num2 = random.rand(1)
-
-num3 = random.randint(100, size=10)
-
-print(num)
-print(type(num))
-print(num2)
-print(num3)
-
-num4 = random.randint(100, size=(3, 5))
-print(num4)
-
-num5 = random.rand(3,5)*100
-print(num5)
-
-x = random.uniform(100,900, (3,5))
-print(x)
