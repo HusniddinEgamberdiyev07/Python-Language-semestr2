@@ -170,3 +170,92 @@ nums = np.array([1,2,3])
 r.permutation(nums)
 print(nums)
 print(r.permutation(nums))
+
+# import matplotlib as mpt
+
+# print(mpt.__version__)
+
+# import matplotlib.pyplot as plt
+# import numpy as np
+
+# xPoints = np.array([0, 10])
+# yPoints = np.array([0, 15])
+
+# plt.plot(xPoints, yPoints, 'o')
+# plt.show()
+
+# import matplotlib.pyplot as plt
+# import numpy as np
+# import numpy.random as r
+
+# yPoints = r.randint(1, 100, size=6)
+
+# plt.plot(yPoints, marker="o")
+# plt.grid(axis="y", linestyle="dotted", linewidth=5, color="brown")
+# plt.show()
+
+# import matplotlib.pyplot as plt
+# import numpy as np
+# import numpy.random as r
+
+# yPoints1 = r.randint(1, 100, size=10)
+# yPoints2 = r.randint(1, 100, size=10)
+
+
+# plt.subplot(2, 1, 1)
+# plt.plot(yPoints1)
+# plt.title("plot 1")
+# plt.xlabel("x nums plot1")
+# plt.ylabel("y nums plot1")
+# plt.grid(axis="x")
+
+# plt.subplot(2, 1, 2)
+# plt.plot(yPoints2)
+# plt.title("plot 2")
+# plt.xlabel("x nums plot2")
+# plt.ylabel("y nums plot2")
+# plt.grid(axis="y")
+
+# plt.suptitle("I am The Title")
+
+# plt.show()
+
+import matplotlib.pyplot as plt
+import numpy as np
+import numpy.random as r
+
+percentages = np.array([15, 35, 25, 25])
+labels = np.array(["Banana", "Apple", "Orange", "Atom Bomb"])
+myExplode = np.array([0,0,0,0.6])
+
+plt.pie(percentages, labels=labels, startangle=180, shadow=True, explode=myExplode)
+plt.legend(title="Three fruits with A bomb")
+plt.show()
+
+# x = np.array(["A", "B", "C", "D"])
+# y = r.randint(20, 100, size=4)
+
+# plt.bar(x, y, color="red", width=0.6)
+# plt.show()
+
+# xPoints = r.randint(1,100, size=15)
+# yPoints = r.randint(1,100, size=15)
+
+# colors = r.randint(1,100, size=15)
+# sizes = r.randint(10, 100, size=15)
+# randAlpha = r.rand(1)
+# plt.scatter(xPoints, yPoints, marker="*", c=colors, cmap="inferno", s=sizes, alpha=round(randAlpha[0], 1))
+# plt.colorbar()
+# plt.show()
+
+
+# xPoints = r.randint(1,100, size=16)
+# yPoints = r.randint(1,100, size=16)
+
+# plt.scatter(xPoints, yPoints, color="red")
+
+# xPoints2 = r.randint(1,100, size=16)
+# yPoints2 = r.randint(1,100, size=16)
+
+# plt.scatter(xPoints2, yPoints2, color="green")
+# plt.show()

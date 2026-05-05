@@ -191,7 +191,9 @@ f = open("./files/newFile.txt", "w") # creates new file if it does not exists.
 f = open("./files/newFile.txt", "a") # creates new file if it does not exists.
 ```
 
-### Deleting file.
+### Deleting
+ 
+Deleting file.
 
 ```python
 import os
@@ -436,4 +438,316 @@ nums = np.array([1,2,3])
 r.permutation(nums)
 print(nums)
 print(r.permutation(nums))
+```
+
+## Matplotlib
+
+Installing -> **pip install matplotlib**
+
+Importing and checking the version.
+
+```python
+import matplotlib as mpt
+
+print(mpt.__version__)
+```
+
+### Drawing a line.
+
+We can connect point using **plot** method. It takes two parameters. First one for x points and second one for y points.
+
+```python
+import matplotlib.pyplot as plt
+import numpy as np
+
+xPoints = np.array([0, 10])
+yPoints = np.array([0, 15])
+
+plt.plot(xPoints, yPoints)
+plt.show()
+```
+
+### Without lines
+
+```python
+import matplotlib.pyplot as plt
+import numpy as np
+
+xPoints = np.array([0, 10])
+yPoints = np.array([0, 15])
+
+plt.plot(xPoints, yPoints, 'o')
+plt.show()
+```
+
+### Many Points
+
+```python
+import matplotlib.pyplot as plt
+import numpy as np
+import numpy.random as r
+
+xPoints = r.randint(1, 100, size=6)
+yPoints = r.randint(1, 100, size=6)
+
+plt.plot(xPoints, yPoints)
+plt.show()
+```
+
+### Default xPoints
+
+If we don't have xPonits matplotlib gives default ones such as 1,2,3,4 ...
+
+```python
+import matplotlib.pyplot as plt
+import numpy as np
+import numpy.random as r
+
+yPoints = r.randint(1, 100, size=6)
+
+plt.plot(yPoints)
+plt.show()
+```
+
+### Multiple Lines.
+
+```python
+import matplotlib.pyplot as plt
+import numpy as np
+import numpy.random as r
+
+yPoints = r.randint(1, 100, size=6)
+yPoints2 = r.randint(1, 100, size=6)
+
+plt.plot(yPoints)
+plt.plot(yPoints2)
+plt.show()
+```
+
+### Styling
+
+Keywords:
+
+- **marker**
+- **markersize** - ms
+- **markeredgecolor** - mec shorter variant
+- **markerfacecolor** - mfc shorter variant
+- **linestyle** - ls shorter variant
+- **color** - changes line color. c is shorter variant
+- **linewidth** - lw shorter variant.
+
+```python
+import matplotlib.pyplot as plt
+import numpy as np
+import numpy.random as r
+
+yPoints = r.randint(1, 100, size=6)
+
+# plt.plot(yPoints, marker="*", markersize=24, markeredgecolor="red", markerfacecolor="green", linestyle="dotted", color="orange", linewidth=10)
+plt.plot(yPoints, marker="*", ms=24, mec="red", mfc="green", ls="dotted", c="orange", lw=10) # shorter variant
+plt.show()
+```
+
+### Labels and title
+
+- **xlabel**
+- **ylabel**
+- **title**
+
+We can use **fondict={}** to change font styles for all three methods.
+
+You can their position with **loc** parameter.
+title->center, right, left
+xlabel->center, right, left
+ylabel->top, bottom, center
+
+```python
+import matplotlib.pyplot as plt
+import numpy as np
+import numpy.random as r
+
+yPoints = r.randint(1, 100, size=6)
+
+
+labelFont = {"size":20, "color":"blue", "family":"serif"}
+titleFont = {"size":40, "color":"yellow", "family":"serif"}
+
+plt.plot(yPoints, marker="o")
+plt.title("Experiment", fontdict=titleFont, loc="right")
+plt.xlabel("x nums", fontdict=labelFont, loc="left")
+plt.ylabel("y nums", fontdict=labelFont, loc="bottom")
+plt.show()
+```
+
+### Grid
+
+We can add grids using **grid()** method.
+We can use **axis** parameter to tell which lines to display. x, y and both.
+We can also use **color**, **linestyle** and **linewidth** parameters.
+
+
+```python
+import matplotlib.pyplot as plt
+import numpy as np
+import numpy.random as r
+
+yPoints = r.randint(1, 100, size=6)
+
+plt.plot(yPoints, marker="o")
+plt.grid(axis="y", linestyle="dotted", linewidth=5, color="brown")
+plt.show()
+```
+
+### Display multiple plots
+
+We can display mutiple plots using **subplot** method. It takes three parameters.
+
+subplot(row, column, plotNum)
+
+```python
+import matplotlib.pyplot as plt
+import numpy as np
+import numpy.random as r
+
+yPoints1 = r.randint(1, 100, size=10)
+yPoints2 = r.randint(1, 100, size=10)
+
+plt.subplot(2, 1, 1) # there are 2 rows and 1 column and this one is first plot
+plt.plot(yPoints1)
+
+plt.subplot(2, 1, 2)
+plt.plot(yPoints2)
+
+plt.show()
+```
+
+We can have title, xlabel, ylabel and grid for each plot. We have **suptitle** for all plots.
+
+```python
+import matplotlib.pyplot as plt
+import numpy as np
+import numpy.random as r
+
+yPoints1 = r.randint(1, 100, size=10)
+yPoints2 = r.randint(1, 100, size=10)
+
+
+plt.subplot(2, 1, 1)
+plt.plot(yPoints1)
+plt.title("plot 1")
+plt.xlabel("x nums plot1")
+plt.ylabel("y nums plot1")
+plt.grid(axis="x")
+
+plt.subplot(2, 1, 2)
+plt.plot(yPoints2)
+plt.title("plot 2")
+plt.xlabel("x nums plot2")
+plt.ylabel("y nums plot2")
+plt.grid(axis="y")
+
+plt.suptitle("I am The Title")
+
+plt.show()
+```
+
+### Scatter plots
+
+```python
+import matplotlib.pyplot as plt
+import numpy as np
+import numpy.random as r
+
+xPoints = r.randint(1,100, size=16)
+yPoints = r.randint(1,100, size=16)
+
+plt.scatter(xPoints, yPoints, color="red")
+
+xPoints2 = r.randint(1,100, size=16)
+yPoints2 = r.randint(1,100, size=16)
+
+plt.scatter(xPoints2, yPoints2, color="green")
+plt.show()
+```
+
+We can color each dot with **c** parameter it takes list of colors.
+
+```python
+import matplotlib.pyplot as plt
+import numpy as np
+import numpy.random as r
+
+xPoints = r.randint(1,100, size=5)
+yPoints = r.randint(1,100, size=5)
+
+plt.scatter(xPoints, yPoints, marker="*", c=["red", "green", "blue", "orange", "black"])
+plt.show()
+```
+We can use colormap with **cmap** parameter. It is colorpallete. Values are from 1 to 100.
+**colorbar** method shows colorbar.
+We can give size for each point using **s** parameter. It takes list.
+We can change transparency using **alpa** parameter from 1 to zero
+
+```python
+import matplotlib.pyplot as plt
+import numpy as np
+import numpy.random as r
+
+xPoints = r.randint(1,100, size=15)
+yPoints = r.randint(1,100, size=15)
+
+colors = r.randint(1,100, size=15)
+sizes = r.randint(10, 100, size=15)
+randAlpha = r.rand(1)
+plt.scatter(xPoints, yPoints, marker="*", c=colors, cmap="inferno", s=sizes, alpha=round(randAlpha[0], 1))
+plt.colorbar()
+plt.show()
+```
+
+### Bars
+
+We can draw bar graphs using **bar** method.
+We can create horizontal bars using **barh** method.
+
+Parameters:
+- **color**
+- **width** - bar
+- **hight** - barh
+
+```python
+import matplotlib.pyplot as plt
+import numpy as np
+import numpy.random as r
+
+x = np.array(["A", "B", "C", "D"])
+y = r.randint(20, 100, size=4)
+
+plt.bar(x, y, color="red", width=0.6)
+plt.show()
+```
+
+### Pie charts
+
+**pie** method drwars it.
+It is counterclockwise.
+
+Parameters:
+- **labels**-takes list.
+- **startangle**-default 0.
+- **colors**-takes list.
+- **shadow**-True
+- **explode**-takes list. If value 0 that element won't move if it is greater than 0 it moves.  
+
+```python
+import matplotlib.pyplot as plt
+import numpy as np
+import numpy.random as r
+
+percentages = np.array([15, 35, 25, 25])
+labels = np.array(["Banana", "Apple", "Orange", "Atom Bomb"])
+myExplode = np.array([0,0,0,0.6])
+
+plt.pie(percentages, labels=labels, startangle=180, shadow=True, explode=myExplode)
+plt.legend(title="Three fruits with A bomb")
+plt.show()
 ```
