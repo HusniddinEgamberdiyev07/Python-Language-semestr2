@@ -114,3 +114,59 @@ print(randArr1DFloat)
 
 randArr2DFloat = r.rand(3,5) * 100
 print(randArr2DFloat)
+
+# something = open("./files/something.txt", "w")
+# something = open("./files/something.txt", "r+")
+# something.write("Welcome to this hellish worldewfeq")
+# print(something.read())
+# something.close()
+
+# with open("./files/something.txt", "a+") as file:
+#     file.write("Hello world\n")
+#     file.seek(0)
+#     print(file.read())
+
+randNum3D = r.randint(1, 100, size=(3, 2, 10))
+print(randNum3D)
+
+randNumFloat3D = r.rand(3,2,10)*100
+print(randNumFloat3D)
+
+letters = np.array(["a", "b", "c", "d", "f", "h"])
+print(r.choice(letters))
+print(r.choice(letters, size=(2,3)))
+
+zeroes = np.zeros((2,3))
+print(zeroes)
+
+sameNumArr = np.full((4, 2), 20)
+print(sameNumArr)
+
+from1To10 = np.arange(1,10)
+print(from1To10)
+
+arr = np.array([[1,2,3,4], [2,13,40, 10]])
+arr.shape = (4,2)
+print(arr)
+
+nums1 = r.randint(1,100, size=5)
+nums2 = r.randint(1,100, size=5)
+print(nums1, "\n" , nums2)
+print(np.sum([nums1, nums2]))
+print(np.sum([nums1, nums2], axis=0))
+print(np.sum([nums1, nums2], axis=1))
+
+nums1 = r.randint(1,100, size=5)
+nums2 = r.randint(1,100, size=5)
+
+print(np.vstack([nums1, nums2]))
+print(np.hstack([nums1, nums2]))
+print(np.column_stack([nums1, nums2]))
+
+gacha = r.choice(["s", "a", "b"], p=[0.06, 0.14, 0.8], size=[2,60])
+print(gacha)
+
+nums = np.array([1,2,3])
+r.permutation(nums)
+print(nums)
+print(r.permutation(nums))

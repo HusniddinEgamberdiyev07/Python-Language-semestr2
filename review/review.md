@@ -311,3 +311,129 @@ Generate 2d array with 3 rows and which has 5 random float numbers from 1 to 100
 randArr2DFloat = r.rand(3,5) * 100
 print(randArr2DFloat)
 ```
+
+Generate random number from array elements.
+
+```python
+letters = np.array(["a", "b", "c", "d", "f", "h"])
+print(r.choice(letters))
+```
+Generate an array with random elements from an array. Size tells what shape it should be.
+
+```python
+letters = np.array(["a", "b", "c", "d", "f", "h"])
+print(r.choice(letters, size=(2,3)))
+```
+
+Generate an array with zeroes.
+
+```python
+zeroes = np.zeros((2,3))
+print(zeroes)
+```
+
+Generate an array with the same number.
+
+```python
+sameNumArr = np.full((4, 2), 20)
+print(sameNumArr)
+```
+
+Generate an array within a range
+
+```python
+from1To10 = np.arange(1,10)
+print(from1To10)
+```
+
+### Array shape
+
+Checking a shape of an array.
+
+```python
+arr = np.array([[1,2,3,4], [2,13,40, 10]])
+print(arr.shape)
+```
+
+Changing array shape
+
+```python
+arr = np.array([[1,2,3,4], [2,13,40, 10]])
+arr.shape = (4,2)
+print(arr)
+```
+
+### Array sum
+
+Sum all elements of arrays.
+
+```python
+nums1 = r.randint(1,100, size=2)
+nums2 = r.randint(1,100, size=2)
+print(nums1, "\n" , nums2)
+print(np.sum([nums1, nums2]))
+```
+
+Sum column elements.
+
+```python
+print(np.sum([nums1, nums2], axis=0))
+```
+
+Sum row elements.
+
+```python
+print(np.sum([nums1, nums2], axis=1))
+```
+
+### Joining arrays
+
+- **vstack** -> Joins arrays inside a array. They stay as an array.
+
+```python
+nums1 = r.randint(1,100, size=5)
+nums2 = r.randint(1,100, size=5)
+print(np.vstack([nums1, nums2]))
+```
+
+- **hstack** -> Combines them in a array.
+
+```python
+print(np.hstack([nums1, nums2]))
+```
+
+- **column_stack** -> Takes one element from each element and puts them in one row.
+
+```python
+print(np.column_stack([nums1, nums2]))
+```
+
+### Random data distribution
+
+1 means value will always occur, 0 means it will never occur.
+0.6 value has 60% chance to occur.
+Sum of all probibilities must be 1.
+
+```python
+gacha = r.choice(["s", "a", "b"], p=[0.06, 0.14, 0.8], size=[2,60])
+print(gacha)
+```
+
+### Randomly rearrange an array
+
+- **Shuffle** -> changes original.
+
+```python
+nums = np.array([1,2,3])
+r.shuffle(nums)
+print(nums)
+```
+
+- **Permutation** -> Does not change original returns a new array.
+
+```python
+nums = np.array([1,2,3])
+r.permutation(nums)
+print(nums)
+print(r.permutation(nums))
+```
