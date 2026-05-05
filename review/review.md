@@ -13,6 +13,91 @@ msg = "Hello {0}. {0} is {1} years old. Paid {2:.2f} for {productName}"
 print(msg.format(name, age, price, productName=product))
 ```
 
+## Date
+
+### Creating date objects
+
+```python
+import datetime as dt
+
+myBirthDay = dt.datetime(2007, 11, 12)
+print(myBirthDay)
+```
+
+### now
+
+```python
+now = dt.datetime.now()
+print(now)
+```
+
+### strftime
+
+- **Weekday** - %a (short) %A (full) %w (number 0-6)
+- **Month** - %b (short) %B (full) %m (number 01-12)
+- **Year** - %y (short) %Y (full)
+- **Day of the month (1-31)** - %d
+- **Day of the year (1-366)** - %j
+- **Hour (00-23)** - %H
+- **Hour (00-12)** - %I
+- **PM/AM** - %p
+- **Minute** - %M
+- **Second** - %S
+
+## JSON (Javascript object notation)
+
+From json to python. **json.loads()**
+
+From python to json. **json.dumps()**
+
+## RegEx (Regular Expression)
+
+RegEx methods:
+
+- **findall** - Returns all matches in a list.
+- **search** - Returns first match in objcet.
+- **split** - Returns list where string splitled at each match
+- **sub** - replaces matches
+
+```python
+import re
+
+text = "The rain in a spain"
+
+print(re.findall("ai", text)) #['ai', 'ai']
+print(re.search("ai", text)) # <re.Match object; span=(5, 7), match='ai'>
+print(re.split("ai", text)) # ['The r', 'n in a sp', 'n']
+print(re.sub("ai", "die", text)) # The rdien in a spdien
+```
+
+### Metacharacters:
+
+- **.** - any
+- **^** - starts with
+- **$** - ends with
+- **\*** - zero or more occurance
+- **+** - one or more occurance
+- **?** - zero or one occurance
+- **{}** - exactly specified occurance
+- **|** - or
+
+### Special Sequences
+
+- **\A** - returns match if characters at the beginning.
+- **\b** - returns match if characters at the beginning or at the end.
+- **\d** - returns match if string has digits
+- **\s** - returns match if string has white spaces
+- **\S** - returns match if string does not have white spaces
+- **\w** - returns match if string has word character (a to z, 0-9, underscore )
+- **\W** - returns match if string does not have word characters
+- **\Z** - returns match if character is at the end of string
+
+### Sets
+
+- **[a-z]** - letters from a to z
+- **[0-9]** - digits from 0 to 9
+- **[^0-9]** - except from 0 to 9
+
 ## PIP
 
 PIP ( Preferred installer program ) is package manager.
@@ -388,6 +473,8 @@ Sum row elements.
 print(np.sum([nums1, nums2], axis=1))
 ```
 
+
+
 ### Joining arrays
 
 - **vstack** -> Joins arrays inside a array. They stay as an array.
@@ -600,7 +687,9 @@ plt.show()
 
 ### Display multiple plots
 
-We can display mutiple plots using **subplot** method. It takes three parameters.
+We can display mutiple plots using 
+
+**subplot** method. It takes three parameters.
 
 subplot(row, column, plotNum)
 
